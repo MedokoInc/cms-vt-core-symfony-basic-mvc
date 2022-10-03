@@ -17,8 +17,8 @@
         <th> Date </th>
     </tr>
 
-    {% for round in rounds %}
-    {% include 'round_template.html' with {'player': round.player,'distance': round.distance,'time': round.time,'model': round.model,'date': round.date} %}
+    {% for peew in peews %}
+    {% include 'peew_template.html' with {'player': peew.player,'distance': peew.distance,'time': peew.time,'model': peew.model,'date': peew.date} %}
     {% endfor %}
 </table>
 </body>

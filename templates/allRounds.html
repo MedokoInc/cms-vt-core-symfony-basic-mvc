@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Twig</title>
+  <link rel="stylesheet" href="{{asset('style/style.css')}}">
+</head>
+<body>
+<img src="{{asset('img/logo.png')}}" height="100 px" alt="Logo">
+<table id="stats">
+
+{% for peews in rounds %}
+    <tr>
+      <th> Player </th>
+      <th> Distance </th>
+      <th> Time </th>
+      <th> Model</th>
+      <th> Date </th>
+    </tr>
+
+    {% for peew in peews.getPeews() %}
+      {% include 'peew_template.html' with {'player': peew.player,'distance': peew.distance,'time': peew.time,'model': peew.model,'date': peew.date} %}
+    {% endfor %}
+
+{% endfor %}
+</table>
+</body>
+</html>
