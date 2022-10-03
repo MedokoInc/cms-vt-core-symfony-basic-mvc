@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Twig</title>
+    <link rel="stylesheet" href="{{asset('style/style.css')}}">
+</head>
+<body>
+<img src="{{asset('img/logo.png')}}" height="100 px" alt="Logo">
+
+<table id="stats">
+    <tr>
+        <th> Player </th>
+        <th> Distance </th>
+        <th> Time </th>
+        <th> Model</th>
+        <th> Date </th>
+    </tr>
+
+    {% for round in rounds %}
+    {% include 'round_template.html' with {'player': round.player,'distance': round.distance,'time': round.time,'model': round.model,'date': round.date} %}
+    {% endfor %}
+</table>
+</body>
+</html>
