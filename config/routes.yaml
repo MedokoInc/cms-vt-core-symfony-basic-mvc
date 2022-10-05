@@ -1,3 +1,8 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
+results:
+    path: /results/{round}
+    controller: App\Controller\RoundController::index
+    defaults: { round: 0 }
+    methods: [GET]

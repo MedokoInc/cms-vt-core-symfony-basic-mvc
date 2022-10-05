@@ -19,7 +19,7 @@
         <th> Date </th>
     </tr>
 
-{% for peews in rounds %}
+{% for round in rounds|filter(round=>round.id==id) %}
     <tr>
         <th colspan="5" style="background-color: #a23133">
             <a href="/results/{{loop.index}}" style="color: white">
@@ -29,7 +29,7 @@
     </tr>
 
 
-    {% for peew in peews.getPeews() %}
+    {% for peew in round.getPeews()|sort ((a,b) => b.distance <=> a.distance?:a.time <=> b.time)%}
       {% include 'peew_template.html' with {'player': peew.player,'distance': peew.distance,'time': peew.time,'model': peew.model,'date': peew.date} %}
     {% endfor %}
 
