@@ -6,17 +6,28 @@
   <link rel="stylesheet" href="{{asset('style/style.css')}}">
 </head>
 <body>
+<a href="/results">
 <img src="{{asset('img/logo.png')}}" height="100 px" alt="Logo">
+</a>
 <table id="stats">
+
+    <tr>
+        <th> Player </th>
+        <th> Distance </th>
+        <th> Time </th>
+        <th> Model</th>
+        <th> Date </th>
+    </tr>
 
 {% for peews in rounds %}
     <tr>
-      <th> Player </th>
-      <th> Distance </th>
-      <th> Time </th>
-      <th> Model</th>
-      <th> Date </th>
+        <th colspan="5" style="background-color: #a23133">
+            <a href="/results/{{loop.index}}" style="color: white">
+                Round {{loop.index}}
+            </a>
+        </th>
     </tr>
+
 
     {% for peew in peews.getPeews() %}
       {% include 'peew_template.html' with {'player': peew.player,'distance': peew.distance,'time': peew.time,'model': peew.model,'date': peew.date} %}

@@ -6,9 +6,17 @@
     <link rel="stylesheet" href="{{asset('style/style.css')}}">
 </head>
 <body>
-<img src="{{asset('img/logo.png')}}" height="100 px" alt="Logo">
+<a href="/results">
+    <img src="{{asset('img/logo.png')}}" height="100 px" alt="Logo">
+</a>
 
 <table id="stats">
+    <tr>
+        <th colspan="5" style="background-color: #a23133">
+                Round {{id}}
+        </th>
+    </tr>
+
     <tr>
         <th> Player </th>
         <th> Distance </th>
