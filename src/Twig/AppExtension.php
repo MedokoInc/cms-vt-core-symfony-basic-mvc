@@ -10,15 +10,20 @@ class AppExtension extends AbstractExtension
     public function getFilters()
     {
         return [
-            new TwigFilter('distance', [$this, 'sortDistance']),
+            new TwigFilter('TimeToSpeed', [$this, 'TimeToSpeed']),
         ];
     }
 
-    public function TimeToSpeed(float $distance, float $time): string
+    public function TimeToSpeed($value, float $distance, bool $switch): string
     {
-        $price = number_format($number, $decimals, $decPoint, $thousandsSep);
-        $price = '$'.$price;
+        if ($switch) {
+            $value = $value /1000;
+            $unit = 'm/s';
+            return $distance / $value.$unit;
 
-        return $price;
+        } else {
+            $unit = 'ms';
+            return $value.$unit;
+        }
     }
 }

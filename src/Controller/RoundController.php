@@ -14,7 +14,7 @@ class RoundController extends AbstractController
     public function index(string $round, DataGenerator $dataGenerator): Response
     {
         $rounds = $dataGenerator->generateData();
-        return $this->render('allRounds.html', ['rounds'=>$rounds,'id'=>$round]);
+        return $this->render('round_template.html', ['rounds'=>$rounds,'id'=>$round]);
     }
     //php bin/console debug:autowiring
 }

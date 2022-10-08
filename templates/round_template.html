@@ -19,11 +19,11 @@
         <th> Date </th>
     </tr>
 
-{% for round in rounds|filter(round=>round.id==id) %}
+{% for round in rounds|filter(round=>round.id==id or id==0) %}
     <tr>
         <th colspan="5" style="background-color: #a23133">
-            <a href="/results/{{loop.index}}" style="color: white">
-                Round {{loop.index}}
+            <a href="/results/{{round.id}}" style="color: white">
+                Round {{round.id}}
             </a>
         </th>
     </tr>
