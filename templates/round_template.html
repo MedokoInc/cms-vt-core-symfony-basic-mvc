@@ -9,8 +9,8 @@
 <a href="/results">
 <img src="{{asset('img/logo.png')}}" height="100 px" alt="Logo">
 </a>
-<table id="stats">
 
+<table id="stats">
     <tr>
         <th> Player </th>
         <th> Distance </th>
@@ -34,6 +34,8 @@
     {% endfor %}
 
 {% endfor %}
+
 </table>
+{{getWinner(rounds)}}
 </body>
 </html>

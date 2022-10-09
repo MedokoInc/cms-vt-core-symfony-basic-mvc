@@ -4,11 +4,11 @@ namespace App;
 
 class Peew
 {
-    public $player;
-    public $distance;
-    public $time;
-    public $model;
-    public $date;
+    public string $player;
+    public float $distance;
+    public float $time;
+    public string $model;
+    public string $date;
 
     public function __construct($player, $distance, $time, $model, $date){
         $this->player = $player;
@@ -42,11 +42,13 @@ class Peew
         return $this->date;
     }
 
-    public function getMatch(){
+    public function getMatch(): string
+    {
         return $this->player . " " . $this->distance . " " . $this->time . " " . $this->model . " " . $this->date;
     }
 
-    public function getArray(){
+    public function getArray(): array
+    {
         return array($this->player, $this->distance, $this->time, $this->model, $this->date);
     }
 

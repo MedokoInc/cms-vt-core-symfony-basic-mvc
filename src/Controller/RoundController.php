@@ -11,10 +11,10 @@ use App\Service\DataGenerator;
 
 class RoundController extends AbstractController
 {
-    public function index(string $round, DataGenerator $dataGenerator): Response
+    public function index(string $round, bool $speed, DataGenerator $dataGenerator): Response
     {
         $rounds = $dataGenerator->generateData();
-        return $this->render('round_template.html', ['rounds'=>$rounds,'id'=>$round]);
+        return $this->render('round_template.html', ['rounds'=>$rounds,'id'=>$round,'speed'=>$speed]);
     }
     //php bin/console debug:autowiring
 }

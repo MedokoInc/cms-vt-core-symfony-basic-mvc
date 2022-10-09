@@ -4,5 +4,7 @@ controllers:
 results:
     path: /results/{round}
     controller: App\Controller\RoundController::index
-    defaults: { round: 0 }
+    defaults:
+        round: 0
+        speed: 1
     methods: [GET]
