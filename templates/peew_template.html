@@ -3,5 +3,5 @@
     <td> {{distance}} m</td>
     <td> {{time | TimeToSpeed(distance, 1)}}</td>
     <td> {{model}}</td>
-    <td> {{date}}</td>
+    <td> {% if date is date %} {{date}} {% else %} Not a valid date {% endif %}</td>
 </tr>

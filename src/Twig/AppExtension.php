@@ -6,6 +6,7 @@ use App\Round;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
+use Twig\TwigTest;
 
 class AppExtension extends AbstractExtension
 {
@@ -50,4 +51,20 @@ class AppExtension extends AbstractExtension
         }
         return $winner[array_search(max($winnercount), $winnercount)];
     }
+
+    public function getTests()
+    {
+
+        return [
+            new TwigTest('date', [$this, 'isDate']),
+        ];
+    }
+
+    public function isDate($date): bool
+    {
+        if (preg_match("/^(0[1-9]|[1-2][0-9]|3[0-1]).(0[1-9]|1[0-2]).[0-9]{4}$/",$date)) {
+            return true;
+        } else {
+            return false;
+        }    }
 }
